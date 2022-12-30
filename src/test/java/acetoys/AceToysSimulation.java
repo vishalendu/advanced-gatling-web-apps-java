@@ -27,28 +27,24 @@ public class AceToysSimulation extends Simulation {
   {
       if (TEST_TYPE.equals( "INSTANT_USERS")) {
           setUp(TestPopulation.instantUsers).protocols(httpProtocol).assertions(
-                  global().successfulRequests().percent().is(100.0),
-                  global().responseTime().percentile(0.99).lt(100)
+                  global().successfulRequests().percent().is(100.0)
+                  //,global().responseTime().percentile(0.99).lt(100)
                   );
       } else if (TEST_TYPE.equals("RAMP_USERS")) {
           setUp(TestPopulation.rampUsers).protocols(httpProtocol).assertions(
-                  global().successfulRequests().percent().is(100.0),
-                  global().responseTime().percentile(0.99).lt(100)
+                  global().successfulRequests().percent().is(100.0)
           );
       } else if (TEST_TYPE.equals("COMPLEX_INJECTION")) {
           setUp(TestPopulation.complexInjection).protocols(httpProtocol).assertions(
-                  global().successfulRequests().percent().is(100.0),
-                  global().responseTime().percentile(0.99).lt(100)
+                  global().successfulRequests().percent().is(100.0)
           );
       } else if (TEST_TYPE.equals("CLOSED_MODEL")) {
           setUp(TestPopulation.closedModel).protocols(httpProtocol).assertions(
-                  global().successfulRequests().percent().is(100.0),
-                  global().responseTime().percentile(0.99).lt(100)
+                  global().successfulRequests().percent().is(100.0)
           );
       } else {
           setUp(TestPopulation.instantUsers).protocols(httpProtocol).assertions(
-                  global().successfulRequests().percent().is(100.0),
-                  global().responseTime().percentile(0.99).lt(100)
+                  global().successfulRequests().percent().is(100.0)
           );
       }
   }
